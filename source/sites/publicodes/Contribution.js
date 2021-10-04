@@ -4,6 +4,7 @@ import emoji from 'react-easy-emoji'
 import { Markdown } from 'Components/utils/markdown'
 import FAQ from 'raw-loader!./FAQ.md'
 import { useLocation } from 'react-router-dom'
+import { useQuery } from '../../utils'
 
 let formStyle = `
 label {
@@ -47,9 +48,6 @@ let createIssue = (title, body, setURL, disableButton) => {
 			setURL(json.url)
 			disableButton(false)
 		})
-}
-function useQuery() {
-	return new URLSearchParams(useLocation().search)
 }
 
 export default ({}) => {
