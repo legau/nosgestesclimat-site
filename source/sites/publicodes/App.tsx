@@ -42,6 +42,7 @@ export default function Root({}) {
 	 * to showcase the app as it would be once this branch of -data  has been merged*/
 	const branch = urlParams.get('branch')
 	const pullRequestNumber = urlParams.get('PR')
+	const persistedSimulation = retrievePersistedSimulation()
 	return (
 		<Provider
 			tracker={tracker}
@@ -53,7 +54,8 @@ export default function Root({}) {
 			}}
 			initialStore={{
 				//...retrievePersistedState(),
-				previousSimulation: retrievePersistedSimulation(),
+				previousSimulation: persistedSimulation,
+				actionChoices: persistedSimulation.actionChoices || {},
 			}}
 			rulesURL={`https://${
 				branch
