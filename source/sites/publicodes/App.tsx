@@ -55,7 +55,7 @@ export default function Root({}) {
 			initialStore={{
 				//...retrievePersistedState(),
 				previousSimulation: persistedSimulation,
-				actionChoices: persistedSimulation.actionChoices || {},
+				actionChoices: persistedSimulation?.actionChoices || {},
 			}}
 			rulesURL={`https://${
 				branch
