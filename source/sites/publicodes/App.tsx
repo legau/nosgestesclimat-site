@@ -127,6 +127,7 @@ const Router = ({}) => {
 					css={`
 						@media (min-width: 800px) {
 							flex-grow: 1;
+							padding: 1rem;
 						}
 					`}
 				>
