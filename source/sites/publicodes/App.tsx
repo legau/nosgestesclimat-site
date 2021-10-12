@@ -73,6 +73,7 @@ export default function Root({}) {
 
 const Router = ({}) => {
 	const location = useLocation()
+	const homePage = location.pathname === '/'
 	return (
 		<>
 			<div
@@ -84,7 +85,10 @@ const Router = ({}) => {
 					}
 
 					@media (min-width: 1200px) {
+						${!homePage &&
+						`
 						transform: translateX(-4vw);
+						`}
 					}
 					${sessionBarMargin}
 				`}
@@ -107,7 +111,7 @@ const Router = ({}) => {
 							justify-content: start;
 							border-right: 1px solid #eee;
 						}
-						${location.pathname === '/' && `display: none`}
+						${homePage && `display: none`}
 					`}
 				>
 					<Link
