@@ -56,6 +56,7 @@ export default function Root({}) {
 				//...retrievePersistedState(),
 				previousSimulation: persistedSimulation,
 				actionChoices: persistedSimulation?.actionChoices || {},
+				tutorials: persistedSimulation?.tutorials || {},
 			}}
 			rulesURL={`https://${
 				branch
